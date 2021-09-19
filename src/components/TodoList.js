@@ -1,7 +1,7 @@
 import React from 'react';
 import TodoListItem from './TodoListItem';
 
-const TodoList = () => {
+const TodoList = ({ todos }) => {
   return (
     <div>
       {todos.map((todo) => (
