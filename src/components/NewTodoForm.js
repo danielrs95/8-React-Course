@@ -32,11 +32,15 @@ const NewTodoForm = ({ todos, onCreatePressed }) => {
 };
 
 const mapStateToProps = (state) => {
-  todos: state.todos;
+  return {
+    todos: state.todos,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  onCreatePressed: (text) => dispatch(createTodo(text));
+  return {
+    onCreatePressed: (text) => dispatch(createTodo(text)),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewTodoForm);
