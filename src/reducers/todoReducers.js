@@ -1,6 +1,6 @@
 import { CREATE_TODO, REMOVE_TODO } from '../actions/todoActions';
 
-export const todoReducer = (state = [], action) => {
+export const todos = (state = [], action) => {
   const { type, payload } = action;
 
   switch (type) {
