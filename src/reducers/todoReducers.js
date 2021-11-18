@@ -31,11 +31,11 @@ export const todos = (state = [], action) => {
     }
 
     case REMOVE_TODO: {
-      const { text } = payload;
+      const { todo: todoToRemove } = payload;
 
       // Usamos el texto como si fuera el ID proque no vamos a permitir todos repetidos
       // No es lo ideal, pero es algo temporal
-      return state.filter((todo) => todo.text !== text);
+      return state.filter((todo) => todo.id !== todoToRemove.id);
     }
 
     case MARK_TODO_AS_COMPLETED: {

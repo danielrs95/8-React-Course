@@ -17,7 +17,7 @@ const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => {
 
         <button
           onClick={() => {
-            onRemovePressed(todo.text);
+            onRemovePressed(todo.id);
           }}
         >
           Remove
