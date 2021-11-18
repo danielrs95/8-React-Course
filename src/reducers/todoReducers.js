@@ -26,15 +26,8 @@ export const todos = (state = [], action) => {
 
   switch (type) {
     case CREATE_TODO: {
-      const { text } = payload;
-      const newTodo = {
-        text,
-        isCompleted: false,
-      };
-
-      // Agregamos al estado el newTodo
-      // concat no muta el estado, devuelve otro array nuevo
-      return state.concat(newTodo);
+      const { todo } = payload;
+      return state.concat(todo);
     }
 
     case REMOVE_TODO: {
