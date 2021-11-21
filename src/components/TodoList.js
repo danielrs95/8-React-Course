@@ -7,6 +7,7 @@ import {
   markTodoAsCompletedRequest,
   removeTodoRequest,
 } from '../thunks';
+import { getTodos, getTodosLoading } from './selectors';
 
 const TodoList = ({
   todos = [],
@@ -26,6 +27,7 @@ const TodoList = ({
       <NewTodoForm />
       {todos.map((todo) => (
         <TodoListItem
+          key={todo.id}
           todo={todo}
           onRemovePressed={onRemovePressed}
           onCompletedPressed={onCompletedPressed}
@@ -39,8 +41,8 @@ const TodoList = ({
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
-    todos: state.todos,
+    isLoading: getTodosLoading(state),
+    todos: getTodos(state),
   };
 };
 
