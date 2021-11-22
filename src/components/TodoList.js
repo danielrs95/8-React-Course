@@ -12,6 +12,12 @@ import {
   getIncompleteTodos,
   getTodosLoading,
 } from './selectors';
+import styled from 'styled-components';
+
+const ListWrapper = styled.div`
+  max-width: 700px;
+  margin: auto;
+`;
 
 const TodoList = ({
   completedTodos,
@@ -28,7 +34,7 @@ const TodoList = ({
   const loadingMessage = <div>Loading todos..</div>;
 
   const content = (
-    <div>
+    <ListWrapper>
       <NewTodoForm />
       <h3>Incomplete:</h3>
       {incompletedTodos.map((todo) => (
@@ -48,7 +54,7 @@ const TodoList = ({
           onCompletedPressed={onCompletedPressed}
         />
       ))}
-    </div>
+    </ListWrapper>
   );
 
   return isLoading ? loadingMessage : content;
